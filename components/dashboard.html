@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel - Ödeme Yönetim Sistemi</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Header Bileşeni -->
+    <div id="header"></div>
+
+    <!-- Kullanıcı Paneli -->
+    <main>
+        <h2>Hoş Geldiniz, <span id="userFin"></span></h2>
+        
+        <!-- Kart Detayları -->
+        <section id="cardDetails" class="card-section">
+            <h3>Kart Detaylarınız</h3>
+            <p><strong>Kart Numarası:</strong> <span id="cardNumberDisplay"></span></p>
+            <p><strong>Son Kullanma Tarihi:</strong> <span id="expiryDateDisplay"></span></p>
+            <p><strong>Kart Geçerliliği:</strong> <span id="cardValidityDisplay"></span></p>
+        </section>
+
+        <!-- Ödeme Sekmeleri -->
+        <div class="tabs">
+            <button class="tab-button active" data-tab="completedPayments">Benim Ödenişlerim</button>
+            <button class="tab-button" data-tab="pendingPayments">Benim Ödemem Gerekenler</button>
+        </div>
+        <div class="tab-content active" id="completedPayments">
+            <h3>Geçmiş Ödemeler</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tarih</th>
+                        <th>Alıcı Adı</th>
+                        <th>Tutar</th>
+                    </tr>
+                </thead>
+                <tbody id="completedPaymentsBody">
+                    <!-- Ödemeler Buraya Eklenecek -->
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-content hidden" id="pendingPayments">
+            <h3>Bekleyen Ödemeler</h3>
+            <button id="addPaymentBtn" class="btn">Otomatik Ödeme Ekle</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Planlanan Tarih</th>
+                        <th>Alıcı Adı</th>
+                        <th>Tutar</th>
+                        <th>Ödeme Durumu</th>
+                        <th>İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody id="pendingPaymentsBody">
+                    <!-- Ödemeler Buraya Eklenecek -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Otomatik Ödeme Ekle Modalı -->
+    <div id="paymentModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Otomatik Ödeme Ekle</h3>
+            <form id="paymentForm">
+                <div class="form-group">
+                    <label for="paymentDate">Tarih:</label>
+                    <input type="date" id="paymentDate" name="paymentDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="paymentAmount">Tutar:</label>
+                    <input type="number" id="paymentAmount" name="paymentAmount" required min="1" step="0.01" placeholder="Örn: 100.00">
+                </div>
+                <div class="form-group">
+                    <label for="paymentRecipient">Alıcı Adı:</label>
+                    <input type="text" id="paymentRecipient" name="paymentRecipient" required placeholder="Alıcı Adı">
+                </div>
+                <div class="form-group">
+                    <label for="paymentNote">Not (Opsiyonel):</label>
+                    <textarea id="paymentNote" name="paymentNote" placeholder="Not ekleyebilirsiniz..."></textarea>
+                </div>
+                <button type="submit" class="btn">Ödeme Ekle</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Bileşeni -->
+    <div id="footer"></div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

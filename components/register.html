@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol - Ödeme Yönetim Sistemi</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Header Bileşeni -->
+    <div id="header"></div>
+
+    <!-- Kayıt Formu -->
+    <main>
+        <h2>Kayıt Ol</h2>
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="fin">FIN Kodu:</label>
+                <input type="text" id="fin" name="fin" required maxlength="7" placeholder="Örn: ABC1234">
+                <small id="finError" class="error"></small>
+            </div>
+            <div class="form-group">
+                <label for="password">Şifre:</label>
+                <input type="password" id="password" name="password" required minlength="6" placeholder="En az 6 karakter">
+                <small id="passwordError" class="error"></small>
+            </div>
+            <div class="form-group">
+                <label for="cardNumber">Kart Numarası:</label>
+                <input type="text" id="cardNumber" name="cardNumber" required maxlength="16" placeholder="16 haneli kart numarası">
+                <small id="cardNumberError" class="error"></small>
+            </div>
+            <div class="form-group">
+                <label for="expiryDate">Son Kullanma Tarihi (MM/YY):</label>
+                <input type="text" id="expiryDate" name="expiryDate" required placeholder="MM/YY" maxlength="5">
+                <small id="expiryDateError" class="error"></small>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV Kodu:</label>
+                <input type="text" id="cvv" name="cvv" required maxlength="3" placeholder="3 haneli CVV">
+                <small id="cvvError" class="error"></small>
+            </div>
+            <button type="submit" class="btn">Kayıt Ol</button>
+        </form>
+    </main>
+
+    <!-- Footer Bileşeni -->
+    <div id="footer"></div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/register.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Yap - Ödeme Yönetim Sistemi</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Header Bileşeni -->
+    <div id="header"></div>
+
+    <!-- Giriş Formu -->
+    <main>
+        <h2>Giriş Yap</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="fin">FIN Kodu:</label>
+                <input type="text" id="fin" name="fin" required maxlength="7">
+                <small id="finError" class="error"></small>
+            </div>
+            <div class="form-group">
+                <label for="password">Şifre:</label>
+                <input type="password" id="password" name="password" required minlength="6">
+                <small id="passwordError" class="error"></small>
+            </div>
+            <button type="submit" class="btn">Giriş Yap</button>
+        </form>
+    </main>
+
+    <!-- Footer Bileşeni -->
+    <div id="footer"></div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/login.js"></script>
+</body>
+</html>
